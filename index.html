@@ -6,7 +6,7 @@
 <title>Magazziniere Digitale — Il tuo magazzino, anche online</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -21,18 +21,27 @@
 <div class="hero">
   <h1>Il tuo magazzino, anche online.</h1>
   <p>Non un'agenzia, non teoria da corso: chi ha lavorato in un magazzino ricambi oggi aiuta negozi e attività a vendere anche online, partendo da dove sono ora.</p>
+  <p class="credibility">Marco Caliciotti — ex magazziniere ricambi, oggi consulente digitale indipendente.</p>
   <a href="#contatti" class="btn">Richiedi il check gratuito</a>
+  <br>
+  <a href="#come-funziona" class="scroll-hint">Come funziona ↓</a>
 </div>
 
 <section>
   <div class="wrap">
-    <div class="section-title">Come posso aiutarti</div>
+    <h2 class="section-title">Come posso aiutarti</h2>
     <div class="cards">
       <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="3" y="9" width="18" height="11" rx="1"/><path d="M3 9l2-5h14l2 5"/><path d="M9 13h6"/>
+        </svg>
         <h3>Vendi il tuo stock fermo</h3>
         <p>Hai ricambi o prodotti invenduti in magazzino da anni? Ti aiuto a piazzarli su marketplace o tramite un e-commerce, senza reinventare il tuo modo di lavorare.</p>
       </div>
       <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="13" rx="1"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M8 9l3 3 5-5"/>
+        </svg>
         <h3>Apri il tuo primo canale online</h3>
         <p>Lavori ancora solo in negozio? Partiamo dal minimo indispensabile — anche solo una vetrina su un marketplace — per farti trovare da chi cerca online prima di comprare.</p>
       </div>
@@ -40,9 +49,9 @@
   </div>
 </section>
 
-<section>
+<section id="come-funziona">
   <div class="wrap">
-    <div class="section-title">Come funziona</div>
+    <h2 class="section-title">Come funziona</h2>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -63,11 +72,40 @@
   </div>
 </section>
 
+<section id="chi-sono">
+  <div class="wrap">
+    <h2 class="section-title">Chi sono</h2>
+    <div class="chi-sono-box">
+      <p>Ho lavorato come magazziniere ricambi in una concessionaria Renault-Dacia: ordini, giacenze, ricerca codici, il lato pratico di un magazzino ricambi lo conosco da dentro, non dai libri.</p>
+      <p>Oggi metto quella stessa concretezza al servizio di chi vuole vendere online — senza promesse commerciali esagerate, partendo da quello che serve davvero al tuo negozio.</p>
+      <p class="firma">Marco Caliciotti</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2 class="section-title">Domande frequenti</h2>
+    <div class="faq-item">
+      <h4>Devo aprire una partita IVA per iniziare?</h4>
+      <p>No. Il check iniziale è una chiacchierata gratuita per capire la tua situazione: si parla di eventuali passi successivi solo se ha senso per te.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Quanto costa il primo passo?</h4>
+      <p>Il check gratuito è gratuito, appunto — senza impegno. I costi dei passi successivi te li spiego chiaramente prima di partire, caso per caso.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Devo saperci fare con i computer?</h4>
+      <p>No. Della parte tecnica mi occupo io — a te chiedo solo di raccontarmi come lavora oggi il tuo negozio.</p>
+    </div>
+  </div>
+</section>
+
 <section id="contatti">
   <div class="wrap">
-    <div class="section-title">Richiedi il tuo check gratuito</div>
+    <h2 class="section-title">Richiedi il tuo check gratuito</h2>
 
-    <form id="__vtigerWebForm_1" name="Landing Page" action="https://magazzinieredigitale.od2.vtiger.com/modules/Webforms/capture.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+    <form id="__vtigerWebForm_1" name="Landing Page" action="https://magazzinieredigitale.od2.vtiger.com/modules/Webforms/capture.php" method="post" accept-charset="utf-8" enctype="multipart/form-data" novalidate>
       <input type="hidden" name="publicid" value="2d667d3418e5b83df085e7fe6eb01900">
       <input type="hidden" name="urlencodeenable" value="1">
       <input type="hidden" name="name" value="Landing Page">
@@ -78,17 +116,20 @@
           <label>Nome</label>
           <input type="text" name="firstname" maxlength="40" data-label="Nome" value="">
         </div>
-        <div class="field">
+        <div class="field" data-field-wrap>
           <label>Cognome *</label>
           <input type="text" name="lastname" maxlength="80" data-label="Cognome" value="" required>
+          <span class="field-error">Inserisci il cognome.</span>
         </div>
-        <div class="field">
+        <div class="field" data-field-wrap>
           <label>Azienda *</label>
           <input type="text" name="company" maxlength="100" data-label="Azienda" value="" required>
+          <span class="field-error">Inserisci il nome dell'azienda.</span>
         </div>
-        <div class="field">
+        <div class="field" data-field-wrap>
           <label>Email *</label>
           <input type="email" name="email" data-label="Email" value="" required>
+          <span class="field-error">Inserisci un indirizzo email valido.</span>
         </div>
         <div class="field">
           <label>Telefono</label>
@@ -214,7 +255,7 @@
 <option value="Vibo Valentia">Vibo Valentia</option>
           </select>
         </div>
-        <div class="field">
+        <div class="field" data-field-wrap>
           <label>Servizio di interesse *</label>
           <select name="cf_leads_serviziodiinteresse" data-label="Servizio di interesse" required>
             <option value="">Seleziona valore</option>
@@ -222,6 +263,7 @@
             <option value="Restyling digitale/social/e-commerce">Restyling digitale/social/e-commerce</option>
             <option value="Altro">Altro</option>
           </select>
+          <span class="field-error">Seleziona il servizio di interesse.</span>
         </div>
 
         <select name="leadsource" data-label="leadsource" hidden style="display:none">
@@ -243,7 +285,8 @@
         </div>
 
         <div class="field full submit-row">
-          <button type="submit" class="btn" id="vtigerFormSubmitBtn_1">Invia richiesta</button>
+          <button type="submit" class="btn" id="vtigerFormSubmitBtn_1">Richiedi il check gratuito</button>
+          <p class="submit-reassurance">Ti rispondo io personalmente, di solito entro 24-48h.</p>
         </div>
       </div>
     </form>
@@ -272,48 +315,64 @@ window.addEventListener("load", function() {
 <script type="text/javascript">
 window.addEventListener("load", function() {
   var form = document.getElementById("__vtigerWebForm_1"), inputs = form.elements;
+  var submitBtn = document.getElementById("vtigerFormSubmitBtn_1");
+
+  function fieldWrap(input) {
+    return input.closest ? input.closest("[data-field-wrap]") : null;
+  }
+  function clearError(input) {
+    var wrap = fieldWrap(input);
+    if (wrap) { wrap.classList.remove("has-error"); }
+  }
+  function showError(input) {
+    var wrap = fieldWrap(input);
+    if (wrap) { wrap.classList.add("has-error"); }
+  }
+  Array.prototype.forEach.call(inputs, function (inp) {
+    if (inp.getAttribute && inp.getAttribute("required") != null) {
+      inp.addEventListener("input", function () { clearError(inp); });
+      inp.addEventListener("change", function () { clearError(inp); });
+    }
+  });
+
   form.onsubmit = function(event) {
-    document.getElementById("vtigerFormSubmitBtn_1").disabled = true;
-    var required = [], att, val;
+    var att, val, firstInvalid = null;
     for (var i = 0; i < inputs.length; i++) {
       att = inputs[i].getAttribute("required");
       val = inputs[i].value;
       var type = inputs[i].type;
-      if (type == "email") {
-        if (val != "") {
-          var elemLabel = inputs[i].getAttribute("data-label");
-          var emailFilter = /^[_/a-zA-Z0-9]+([!"#$%&()*+,./:;<=>?\^_`{|}~-]?[a-zA-Z0-9/_/-])*@[a-zA-Z0-9]+([\_\-\.]?[a-zA-Z0-9]+)*\.([\-\_]?[a-zA-Z0-9])+(\.?[a-zA-Z0-9]+)?$/;
-          var illegalChars = /[\(\)\<\>\,\;\:"\[\]]/;
-          if (!emailFilter.test(val)) {
-            alert("Per il campo " + elemLabel + " inserisci un indirizzo email valido");
-            document.getElementById("vtigerFormSubmitBtn_1").disabled = false;
-            return false;
-          } else if (val.match(illegalChars)) {
-            alert(elemLabel + " contiene caratteri non validi");
-            document.getElementById("vtigerFormSubmitBtn_1").disabled = false;
-            return false;
-          }
+      if (type == "email" && val != "") {
+        var emailFilter = /^[_/a-zA-Z0-9]+([!"#$%&()*+,./:;<=>?\^_`{|}~-]?[a-zA-Z0-9/_/-])*@[a-zA-Z0-9]+([\_\-\.]?[a-zA-Z0-9]+)*\.([\-\_]?[a-zA-Z0-9])+(\.?[a-zA-Z0-9]+)?$/;
+        var illegalChars = /[\(\)\<\>\,\;\:"\[\]]/;
+        if (!emailFilter.test(val) || val.match(illegalChars)) {
+          showError(inputs[i]);
+          if (!firstInvalid) firstInvalid = inputs[i];
+          continue;
         }
       }
       if (att != null) {
         if (val.replace(/^\s+|\s+$/g, "") == "") {
-          required.push(inputs[i].getAttribute("data-label"));
+          showError(inputs[i]);
+          if (!firstInvalid) firstInvalid = inputs[i];
+        } else {
+          clearError(inputs[i]);
         }
       }
     }
-    if (required.length > 0) {
-      alert("Compila questi campi obbligatori: " + required.join(", "));
-      document.getElementById("vtigerFormSubmitBtn_1").disabled = false;
+    if (firstInvalid) {
+      event.preventDefault();
+      firstInvalid.focus();
       return false;
     }
     var recaptchaResponse = form.getElementsByClassName("g-recaptcha-response")[0] ? form.getElementsByClassName("g-recaptcha-response")[0].value : "";
-    if (recaptchaResponse) {
-      return true;
-    } else {
+    if (!recaptchaResponse) {
+      event.preventDefault();
       alert("Verifica il captcha prima di inviare.");
-      document.getElementById("vtigerFormSubmitBtn_1").disabled = false;
       return false;
     }
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Invio in corso…";
+    return true;
   };
 });
 </script>
