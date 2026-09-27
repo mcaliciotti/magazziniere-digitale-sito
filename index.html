@@ -341,7 +341,12 @@ window.addEventListener("load", function() {
       });
     }
   });
-
+    var companyField = form.elements["company"];
+  if (companyField) {
+    companyField.addEventListener("blur", function () {
+      if (companyField.value) { companyField.value = companyField.value.toUpperCase(); }
+    });
+  }
   hiddenIframe.addEventListener("load", function () {
     if (formSubmittedOnce) {
       window.location.href = "grazie.html";
@@ -370,6 +375,7 @@ window.addEventListener("load", function() {
     nameFields.forEach(function (inp) {
       if (inp && inp.value) { inp.value = capitalizeWords(inp.value); }
     });
+        if (companyField && companyField.value) { companyField.value = companyField.value.toUpperCase(); }
     var att, val, firstInvalid = null;
     for (var i = 0; i < inputs.length; i++) {
       att = inputs[i].getAttribute("required");
