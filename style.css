@@ -200,6 +200,9 @@
   .field input[name="lastname"] {
     text-transform: capitalize;
   }
+  .field input[name="company"] {
+    text-trasform: uppercase;
+  }
   .field-error {
     color: #C2470A;
     font-size: 13px;
