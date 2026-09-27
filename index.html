@@ -328,6 +328,20 @@ window.addEventListener("load", function() {
   var hiddenIframe = document.getElementById("hidden_iframe_1");
   var formSubmittedOnce = false;
 
+  function capitalizeWords(str) {
+    return str.replace(/\S+/g, function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    });
+  }
+  var nameFields = [form.elements["firstname"], form.elements["lastname"]];
+  nameFields.forEach(function (inp) {
+    if (inp) {
+      inp.addEventListener("blur", function () {
+        if (inp.value) { inp.value = capitalizeWords(inp.value); }
+      });
+    }
+  });
+
   hiddenIframe.addEventListener("load", function () {
     if (formSubmittedOnce) {
       window.location.href = "grazie.html";
@@ -353,6 +367,9 @@ window.addEventListener("load", function() {
   });
 
   form.onsubmit = function(event) {
+    nameFields.forEach(function (inp) {
+      if (inp && inp.value) { inp.value = capitalizeWords(inp.value); }
+    });
     var att, val, firstInvalid = null;
     for (var i = 0; i < inputs.length; i++) {
       att = inputs[i].getAttribute("required");
