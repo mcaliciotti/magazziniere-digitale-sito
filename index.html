@@ -76,9 +76,13 @@
   <div class="wrap">
     <h2 class="section-title">Chi sono</h2>
     <div class="chi-sono-box">
-      <p>Ho lavorato come magazziniere ricambi in concessionarie Renault-Dacia e di gruppo Stellantis, oltre che Mitsubishi e Ford: ordini, giacenze, ricerca codici — il lato pratico di un magazzino ricambi lo conosco da dentro, non dai libri.</p>
-      <p>In uno storico negozio di ricambi aftermarket ho gestito i canali marketplace, il sito di comparazione prezzi, l'e-commerce e la presenza social.</p>
-      <p>Oggi metto quella stessa concretezza al servizio di chi vuole vendere online — senza promesse commerciali esagerate, partendo da quello che serve davvero al tuo negozio.</p>
+      <p>Il mondo dei ricambi auto lo conosco da dentro.</p>
+      <p>Il mio percorso è iniziato in uno storico negozio di ricambi aftermarket, dove ho conosciuto da vicino il lavoro quotidiano del ricambista e dove, ancora oggi, curo la parte digitale: marketplace, comparatori di prezzo, e-commerce e presenza sui social.</p>
+      <p>Successivamente ho maturato esperienza come magazziniere ricambi in concessionarie Renault-Dacia, Stellantis, Mitsubishi e Ford, occupandomi di ordini, gestione delle giacenze, ricerca codici, disponibilità e organizzazione del magazzino.</p>
+      <p>Questo percorso mi ha permesso di conoscere entrambe le facce del settore: quella operativa del banco e del magazzino e quella, sempre più importante, della vendita online dei ricambi.</p>
+      <p>Oggi metto questa esperienza al servizio di ricambisti e aziende automotive che vogliono sviluppare o migliorare la propria presenza digitale, partendo da ciò che serve davvero al loro negozio: processi semplici, strumenti utili e soluzioni concrete.</p>
+      <p>Niente promesse commerciali esagerate o formule preconfezionate.</p>
+      <p>Prima si capisce come funziona il tuo lavoro, poi si costruisce ciò che può davvero aiutarti a vendere e lavorare meglio.</p>
       <p class="firma">Marco Caliciotti</p>
     </div>
   </div>
@@ -106,7 +110,7 @@
   <div class="wrap">
     <h2 class="section-title">Richiedi il tuo check gratuito</h2>
 
-    <form id="__vtigerWebForm_1" name="Landing Page" action="https://magazzinieredigitale.od2.vtiger.com/modules/Webforms/capture.php" method="post" accept-charset="utf-8" enctype="multipart/form-data" novalidate>
+    <form id="__vtigerWebForm_1" name="Landing Page" action="https://magazzinieredigitale.od2.vtiger.com/modules/Webforms/capture.php" method="post" accept-charset="utf-8" enctype="multipart/form-data" novalidate target="hidden_iframe_1">
       <input type="hidden" name="publicid" value="2d667d3418e5b83df085e7fe6eb01900">
       <input type="hidden" name="urlencodeenable" value="1">
       <input type="hidden" name="name" value="Landing Page">
@@ -293,6 +297,8 @@
       </div>
     </form>
 
+    <iframe name="hidden_iframe_1" id="hidden_iframe_1" style="display:none;" title="invio form"></iframe>
+
   </div>
 </section>
 
@@ -318,6 +324,14 @@ window.addEventListener("load", function() {
 window.addEventListener("load", function() {
   var form = document.getElementById("__vtigerWebForm_1"), inputs = form.elements;
   var submitBtn = document.getElementById("vtigerFormSubmitBtn_1");
+  var hiddenIframe = document.getElementById("hidden_iframe_1");
+  var formSubmittedOnce = false;
+
+  hiddenIframe.addEventListener("load", function () {
+    if (formSubmittedOnce) {
+      window.location.href = "grazie.html";
+    }
+  });
 
   function fieldWrap(input) {
     return input.closest ? input.closest("[data-field-wrap]") : null;
@@ -374,6 +388,7 @@ window.addEventListener("load", function() {
     }
     submitBtn.disabled = true;
     submitBtn.textContent = "Invio in corso…";
+    formSubmittedOnce = true;
     return true;
   };
 });
