@@ -145,9 +145,9 @@
           <label>Città</label>
           <input type="text" name="city" maxlength="30" data-label="Città" value="">
         </div>
-        <div class="field">
-          <label>Provincia</label>
-          <select name="state" data-label="Provincia">
+        <div class="field" data-field-wrap>
+          <label>Provincia *</label>
+          <select name="state" data-label="Provincia" required>
             <option value="">Seleziona provincia</option>
 <option value="Agrigento">Agrigento</option>
 <option value="Alessandria">Alessandria</option>
@@ -260,6 +260,7 @@
 <option value="Viterbo">Viterbo</option>
 <option value="Vibo Valentia">Vibo Valentia</option>
           </select>
+          <span class="field-error">Seleziona la provincia.</span>
         </div>
         <div class="field" data-field-wrap>
           <label>Servizio di interesse *</label>

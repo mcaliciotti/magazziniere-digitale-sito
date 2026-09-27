@@ -196,6 +196,10 @@
     outline-offset: 1px;
     border-color: var(--navy);
   }
+  .field input[name="firstname"],
+  .field input[name="lastname"] {
+    text-transform: capitalize;
+  }
   .field-error {
     color: #C2470A;
     font-size: 13px;
@@ -205,6 +209,9 @@
   .field.has-error input,
   .field.has-error select {
     border-color: #C2470A;
+  }
+  .field.has-error .select2-selection {
+    border-color: #C2470A !important;
   }
   .field.has-error .field-error { display: block; }
 
